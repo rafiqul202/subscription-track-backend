@@ -7,3 +7,4 @@ authRouter.post("/sign-in", singIn);
 authRouter.delete(`/sign-out/:id`, singOut);
 
 export default authRouter;
+
