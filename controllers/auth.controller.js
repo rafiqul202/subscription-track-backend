@@ -82,8 +82,7 @@ export const singIn = async (req, res, next) => {
 };
 export const singOut = async (req, res, next) => {
   try {
-    const { userId } = req.body;
-    const user = await User.findByIdAndDelete({ _id: userId });
+    const user = await User.findByIdAndDelete(req.params.id);
     if (!user) {
       const error = new Error("user Id not found");
       error.statusCode = 404;
